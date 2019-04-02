@@ -16,43 +16,48 @@ var losses = 0;
 // ----------------------------------------------------------
 
 // Starting Game  
-var start = confirm("Would you like to play Crystal Collector?"); 
 
-if (start === true) { 
+function startGame () { 
 
-    //Assign random number that player number target
-    $("#number").text(targetNumber); 
+    var start = confirm("Would you like to play Crystal Collector?"); 
 
-    // Assigning Numbers to Crystals 
-    function crystalNums () { 
-        $("#blueCrystal").attr("data-crystalvalue", Math.floor(Math.random() * (12 - 1 + 1) + 1));
-        $("#darkGreenCrystal").attr("data-crystalvalue", Math.floor(Math.random() * (12 - 1 + 1) + 1));
-        $("#redCrystal").attr("data-crystalvalue", Math.floor(Math.random() * (12 - 1 + 1) + 1));
-        $("#limeCrystal").attr("data-crystalvalue", Math.floor(Math.random() * (12 - 1 + 1) + 1));
-    }
+    if (start === true) { 
 
-    $(".crystal").on("click", function() { 
+        //Assign random number that player number target
+        $("#number").text(targetNumber); 
 
-        crystalNums(); 
-
-        var crystalNumber = ($(this).attr("data-crystalvalue")); 
-        crystalNumber = parseInt(crystalNumber); 
-        counter = counter + crystalNumber; 
-
-        $("#totalScore").text(counter);
-
-        if (counter === targetNumber) { 
-            alert("You win!!!"); 
-
-            $("#wins").text(wins = wins + 1);
-             
+        // Assigning Numbers to Crystals 
+        function crystalNums () { 
+            $("#blueCrystal").attr("data-crystalvalue", Math.floor(Math.random() * (12 - 1 + 1) + 1));
+            $("#darkGreenCrystal").attr("data-crystalvalue", Math.floor(Math.random() * (12 - 1 + 1) + 1));
+            $("#redCrystal").attr("data-crystalvalue", Math.floor(Math.random() * (12 - 1 + 1) + 1));
+            $("#limeCrystal").attr("data-crystalvalue", Math.floor(Math.random() * (12 - 1 + 1) + 1));
         }
-        else if (counter >= targetNumber) { 
-            alert("You lose.")
 
-            $("#losses").text(losses = losses + 1);   
-        }
-    });      
-    
-} 
+        // Adding click function to crystal so they have values 
+        $(".crystal").on("click", function() { 
+
+            // Running function that assigns random numbers to crystals
+            crystalNums(); 
+
+            var crystalNumber = ($(this).attr("data-crystalvalue")); 
+            crystalNumber = parseInt(crystalNumber); 
+            counter = counter + crystalNumber; 
+
+            $("#totalScore").text(counter);
+
+            if (counter === targetNumber) { 
+                alert("You win!!!"); 
+                $("#wins").text(wins = wins + 1);
+                startGame(); 
+            }
+            else if (counter >= targetNumber) { 
+                alert("You lose.")
+                $("#losses").text(losses = losses + 1); 
+                startGame(); 
+            }
+        });       
+    } 
+}
+startGame(); 
 
