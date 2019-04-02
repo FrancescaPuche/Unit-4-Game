@@ -2,4 +2,40 @@ body {
     background-color: #27798f; 
     margin: 20px; 
     border: 2px; 
+    color: #34354a;
+    font-family: 'Bitter', serif;
+
+}
+
+.jumbotron { 
+    background-color: #ffff; 
+}
+
+h1 { 
+    font-size: 55px;
+}
+
+p { 
+    font-size: 20px;
+}
+
+.row { 
+    margin: 20px; 
+   
+}
+
+.rounded { 
+    background-color: #ffff; 
+}
+
+img { 
+    height: 150px; 
+    weight: 150px; 
+}
+
+button { 
+    padding: 0; 
+    border: none; 
+    background: none; 
+    margin: 20px; 
 }

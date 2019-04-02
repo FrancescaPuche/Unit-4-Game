@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="Assets/CSS/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="Assets/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
 
 </head>
 
@@ -33,26 +34,26 @@
         
         <div class="row"> 
             <div class="col border rounded">
-                <h3> Number</h3>
+                <p> Number: <span id="number"></span></p>
             </div>
     
             <div class="col border rounded">
-                <p> Wins: <span></span></p>
-                <p> Loses: <span></span></p>
+                <p> Wins: <span id="wins"></span></p>
+                <p> Losses: <span id="losses"></span></p>
             </div>
         </div>
     
         <div class="row"> 
             <div class="col-12 text-center border rounded"> 
-               <button> <img src="Assets/Images/blue-crystal.jpg" height="100" width="100"></button>
-               <button> <img src="Assets/Images/dark-green-crystal.jpg" height="100" width="100"></button>
-               <button> <img src="Assets/Images/red-crystal.jpg" height="100" width="100"></button>
-               <button> <img src="Assets/Images/lime-green-crystal.jpg" height="100" width="100"></button>
+               <button id="blueCrystal"> <img src="Assets/Images/blue-crystal.jpg"></button>
+               <button id="darkGreenCrystal"> <img src="Assets/Images/dark-green-crystal.jpg"></button>
+               <button id="redCrystal"> <img src="Assets/Images/red-crystal.jpg"></button>
+               <button id="limeCrystal"> <img src="Assets/Images/lime-green-crystal.jpg"></button>
             </div>
         </div>
     
         <div class="row"> 
-            <p class="col-12 border rounded">Your total score is: <span></span></p>
+            <p class="col-12 border rounded">Your total score is: <span id="totalScore"></span></p>
         </div>
     
         <div> 
